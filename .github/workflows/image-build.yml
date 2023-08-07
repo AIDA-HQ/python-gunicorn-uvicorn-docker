@@ -9,6 +9,7 @@ on:
     paths-ignore:
       - '**/README.md'
       - 'templates/**'
+  workflow_dispatch:
   schedule:
     - cron:  '10 0 * * *'
 
@@ -32,7 +33,7 @@ jobs:
         with:
           package: "uvicorn[standard]"
           package_latest_version: "0.23.2"
-          maintainer: "Robert Hafner <tedivm@tedivm.com>"
+          maintainer: "Filippo Roggi <zzkw35@gmail.com>"
           python_version: ${{ matrix.python_versions }}
           package_version: ${{ matrix.package_versions }}
           target_base: ${{ matrix.target_base }}
