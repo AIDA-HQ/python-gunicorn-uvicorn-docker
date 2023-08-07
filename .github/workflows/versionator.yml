@@ -22,6 +22,6 @@ jobs:
         uses: multi-py/action-python-versionator@v1
         with:
           package: "uvicorn"
-          git_name: "Robert Hafner"
-          git_email: "tedivm@tedivm.com"
+          git_name: "Filippo Roggi"
+          git_email: "zzkw35@gmail.com"
           action_path: ${{ github.workspace }}/.github/workflows/image-build.yml
