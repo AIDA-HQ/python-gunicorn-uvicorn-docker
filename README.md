@@ -30,7 +30,6 @@ For this container the latest version of gunicorn is always used, and the tags r
       * [RELOAD](#reload)
    * [Python Versions](#python-versions)
    * [Image Variants](#image-variants)
-      * [Full](#full)
       * [Slim](#slim)
    * [Architectures](#architectures)
    * [Sponsorship](#sponsorship)
@@ -196,10 +195,6 @@ This project actively supports these Python versions:
 
 Like the upstream Python containers themselves a variety of image variants are supported.
 
-
-### Full
-
-The default container type, and if you're not sure what container to use start here. It has a variety of libraries and build tools installed, making it easy to extend.
 
 
 
