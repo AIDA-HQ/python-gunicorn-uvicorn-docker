@@ -1,13 +1,14 @@
 
 name: Uvicorn Version Updater
 
-# Every 30 minutes check for a new version of the package.
+# Every week check for a new version of the package.
 on:
   push:
     branches:
       - 'main'
   schedule:
-    - cron:  '10,50 * * * *'
+    - cron:  '0 0 * * 0'
+  worflow_dispatch:
 
 jobs:
   Version-Updater:
