@@ -1,4 +1,4 @@
-# python-gunicorn-uvicorn
+# python-gunicorn-uvicorn-docker
 
 
 A multiarchitecture container image for running Python with Gunicorn and Uvicorn.
@@ -6,7 +6,7 @@ A multiarchitecture container image for running Python with Gunicorn and Uvicorn
 For this container the latest version of gunicorn is always used, and the tags represent the uvicorn version.
 
 <!--ts-->
-* [python-gunicorn-uvicorn](#python-gunicorn-uvicorn)
+* [python-gunicorn-uvicorn-docker](#python-gunicorn-uvicorn-docker)
    * [Benefits](#benefits)
       * [Multi Architecture Builds](#multi-architecture-builds)
       * [Small Images via Multi Stage Builds](#small-images-via-multi-stage-builds)
@@ -73,13 +73,13 @@ The Full Images use the base Python Docker images as their parent. These images 
 To pull the latest full version:
 
 ```bash
-docker pull ghcr.io/multi-py/python-gunicorn-uvicorn:py3.11-LATEST
+docker pull ghcr.io/AIDA-HQ/python-gunicorn-uvicorn-docker:py3.11-LATEST
 ```
 
 To include it in the dockerfile instead:
 
 ```dockerfile
-FROM ghcr.io/multi-py/python-gunicorn-uvicorn:py3.11-LATEST
+FROM ghcr.io/AIDA-HQ/python-gunicorn-uvicorn-docker:py3.11-LATEST
 ```
 
 ### Using the Slim Image
@@ -89,13 +89,13 @@ The Slim Images use the base Python Slim Docker images as their parent. These im
 To pull the latest slim version:
 
 ```bash
-docker pull ghcr.io/multi-py/python-gunicorn-uvicorn:py3.11-slim-LATEST
+docker pull ghcr.io/AIDA-HQ/python-gunicorn-uvicorn-docker:py3.11-slim-LATEST
 ```
 
 To include it in the dockerfile instead:
 
 ```dockerfile
-FROM ghcr.io/multi-py/python-gunicorn-uvicorn:py3.11-slim-LATEST
+FROM ghcr.io/AIDA-HQ/python-gunicorn-uvicorn-docker:py3.11-slim-LATEST
 ```
 
 
@@ -108,7 +108,7 @@ It's also possible to copy just the Python packages themselves. This is particul
 ```dockerfile
 FROM python:3.11
 
-COPY --from=ghcr.io/multi-py/python-gunicorn-uvicorn:py3.11-slim-LATEST /usr/local/lib/python3.11/site-packages/* /usr/local/lib/python3.11/site-packages/
+COPY --from=ghcr.io/AIDA-HQ/python-gunicorn-uvicorn-docker:py3.11-slim-LATEST /usr/local/lib/python3.11/site-packages/* /usr/local/lib/python3.11/site-packages/
 ```
 
 ### Add Your App
@@ -121,7 +121,7 @@ By default the startup script checks for the following packages and uses the fir
 If you are using pip to install dependencies your dockerfile could look like this-
 
 ```dockerfile
-FROM ghcr.io/multi-py/python-gunicorn-uvicorn:py3.11-0.23.2
+FROM ghcr.io/AIDA-HQ/python-gunicorn-uvicorn-docker:py3.11-0.23.2
 
 COPY requirements /requirements
 RUN pip install --no-cache-dir -r /requirements
@@ -230,8 +230,8 @@ If you get use out of these containers please consider sponsoring me using Githu
 </center>
 
 ## Tags
-* Recommended Image: `ghcr.io/multi-py/python-gunicorn-uvicorn:py3.11-0.23.2`
-* Slim Image: `ghcr.io/multi-py/python-gunicorn-uvicorn:py3.11-slim-0.23.2`
+* Recommended Image: `ghcr.io/AIDA-HQ/python-gunicorn-uvicorn-docker:py3.11-0.23.2`
+* Slim Image: `ghcr.io/AIDA-HQ/python-gunicorn-uvicorn-docker:py3.11-slim-0.23.2`
 
 Tags are based on the package version, python version, and the upstream container the container is based on.
 
@@ -271,5 +271,5 @@ Tags are based on the package version, python version, and the upstream containe
 
 ### Older Tags
 
-Older tags are left for historic purposes but do not receive updates. A full list of tags can be found on the package's [registry page](https://github.com/multi-py/python-gunicorn-uvicorn/pkgs/container/python-gunicorn-uvicorn).
+Older tags are left for historic purposes but do not receive updates. A full list of tags can be found on the package's [registry page](https://github.com/AIDA-HQ/python-gunicorn-uvicorn-docker/pkgs/container/python-gunicorn-uvicorn-docker).
 
