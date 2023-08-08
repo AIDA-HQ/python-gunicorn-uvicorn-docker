@@ -23,11 +23,12 @@ LABEL org.opencontainers.image.description="python:$publish_target $package:$pac
 
 COPY --from=uvicorn /usr/local/lib/python${python_version}/site-packages/* /usr/local/lib/python${python_version}/site-packages/
 
-COPY ./assets/gunicorn_conf.py /gunicorn_conf.py
 
 # Startup Script
 COPY ./assets/start.sh /start.sh
 RUN chmod +x /start.sh
+
+COPY ./assets/gunicorn_conf.py /gunicorn_conf.py
 
 # Example application so container "works" when run directly.
 COPY ./assets/main.py /app/main.py
