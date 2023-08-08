@@ -42,7 +42,7 @@ fi
 
 # Start Gunicorn
 if [[ $RELOAD == "true" ]]; then
-    exec python -m gunicorn gunicorn -k "$WORKER_CLASS" -c "$GUNICORN_CONF" "$APP_MODULE" --reload
+    exec python -m gunicorn -k "$WORKER_CLASS" -c "$GUNICORN_CONF" "$APP_MODULE" --reload
 else
-    exec python -m gunicorn gunicorn -k "$WORKER_CLASS" -c "$GUNICORN_CONF" "$APP_MODULE"
+    exec python -m gunicorn -k "$WORKER_CLASS" -c "$GUNICORN_CONF" "$APP_MODULE"
 fi
